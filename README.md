@@ -152,5 +152,47 @@ make -j4
 sudo make install
 ```
 
-### 
+### 11. OpenCV 3
+
+- Dependents
+
+```bash
+sudo apt install unzip build-essential libgtk2.0-dev libvtk6-dev libjpeg-dev libtiff5-dev libjasper-dev libopenexr-dev libtbb-dev
+```
+
+- Download Source Code
+
+```bash
+cd 3rdparty # if current dir is 3rdparty, skip this command
+wget https://github.com/opencv/opencv/archive/3.4.16.zip -O opencv3.zip
+unzip -q opencv3.zip
+```
+
+- Cmake
+
+```bash
+cd opencv-3.4.16
+mkdir build && cd build
+cmake ..
+make -j4
+sudo make install
+```
+
+## For Arm64 Machine
+
+In `ch7`, `nmmintrin.h` is not avalible for arm64 machine because it is the Instruction Set of Intel silicon (SSE). We need to replace it with `sse2neon.h` which can transfer the Instruction Set to NEON (Arm Instruction Set).
+
+### Install
+
+```bash
+git clone https://github.com/DLTcollab/sse2neon.git
+cd sse2neon
+sudo cp sse2neon.h /usr/include/
+```
+
+### Replace in `orb_self.cpp`
+
+```c++
+#include <nmmintrin.h> -> #include <sse2neon.h>
+```
 
