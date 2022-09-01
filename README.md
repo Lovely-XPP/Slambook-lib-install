@@ -9,7 +9,7 @@ Introduction to install 3rdparty library of Slambook2 by Xiang Gao.
 
 ## Steps
 
-### 1. git & Dependency 
+### 1. git
 
 ```bash
 sudo apt install git
