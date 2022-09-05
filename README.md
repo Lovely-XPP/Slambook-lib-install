@@ -1,13 +1,13 @@
 # Slambook-Lib-Install
-## Introduction
+## 简介
 
-Introduction to install 3rdparty library of Slambook2 by Xiang Gao.
+Slambook 第二版笔记，包含库安装、代码注释增加等。
 
-## Platform: Ubuntu
+## 使用平台: Ubuntu
 
-## Update time: 2022.09.01
+## 更新时间: 2022.09.05
 
-## Steps
+## 安装Slambook第三方库
 
 ### 1. git
 
@@ -178,11 +178,11 @@ make -j4
 sudo make install
 ```
 
-## For Arm64 Machine
+### 12. 对于 Arm64 的机器
 
 In `ch7`, `nmmintrin.h` is not avalible for arm64 machine because it is the Instruction Set of Intel silicon (SSE). We need to replace it with `sse2neon.h` which can transfer the Instruction Set to NEON (Arm Instruction Set).
 
-### Install
+#### Install
 
 ```bash
 git clone https://github.com/DLTcollab/sse2neon.git
@@ -190,9 +190,12 @@ cd sse2neon
 sudo cp sse2neon.h /usr/include/
 ```
 
-### Replace in `orb_self.cpp`
+#### Replace in `orb_self.cpp`
 
 ```c++
 #include <nmmintrin.h> -> #include <sse2neon.h>
 ```
 
+## 笔记简介
+
+笔记以注释的方式写入代码。
