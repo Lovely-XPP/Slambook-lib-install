@@ -1,7 +1,7 @@
-# Slambook-Lib-Install
+# Slambook2-Notebook
 ## 简介
 
-Slambook 第二版笔记，包含库安装、代码注释增加等。
+Slambook 第二版笔记，包含库安装、代码注释增加等。个人笔记在notebook内。
 
 ## 使用平台: Ubuntu
 
